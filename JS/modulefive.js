@@ -59,3 +59,40 @@ let findByName = (arr, name) => {
 
 console.log(findByName(items, "cHeEsE")); // should return Cheese object
 console.log(findByName(items, "banana")); // should return null
+
+//Exercise 3
+
+let addItem = (items, name, qty, category = "other") => {
+  let currentArray = [...items];
+  if (
+    typeof name === "string" &&
+    name.trim() !== "" &&
+    qty > 0 &&
+    Number.isInteger(qty) &&
+    typeof category === "string" &&
+    category.trim() !== ""
+  ) {
+    let newID = `${name.trim().slice(0, 3).toLowerCase()}${Number.parseInt(
+      Math.random() * 10000
+    )}`;
+
+    let result = items.find((element) => {
+      newID === element.id;
+    });
+    console.log("Result " + result);
+
+    if (result !== true) {
+      currentArray.push({
+        id: newID,
+        name: name,
+        qty: qty,
+        category: category,
+      });
+    }
+  }
+  return currentArray;
+};
+
+const original = items;
+
+const newItems = addItem(items, "Milk", 2, "dairy");
