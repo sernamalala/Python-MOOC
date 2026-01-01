@@ -35,3 +35,27 @@ let items = [
 
 console.log(items.length);
 console.log(items);
+
+//Exercise 2
+
+let findById = (arr, id) => {
+  const isThere = arr.find((thing) => {
+    return thing.id === id;
+  });
+
+  return isThere || null;
+};
+
+console.log(findById(items, "pep359")); // should return Pepperoni object
+console.log(findById(items, "does-not-exist")); // should return null
+
+let findByName = (arr, name) => {
+  const isThere = arr.find((thing) => {
+    return thing.name.toLowerCase() === name.toLowerCase();
+  });
+
+  return isThere || null;
+};
+
+console.log(findByName(items, "cHeEsE")); // should return Cheese object
+console.log(findByName(items, "banana")); // should return null
