@@ -63,6 +63,7 @@ console.log(findByName(items, "banana")); // should return null
 //Exercise 3
 
 let addItem = (items, name, qty, category = "other") => {
+  //spread operator allows a copy of an array to be made without changing the original
   let currentArray = [...items];
   if (
     typeof name === "string" &&
@@ -76,19 +77,28 @@ let addItem = (items, name, qty, category = "other") => {
       Math.random() * 10000
     )}`;
 
-    let result = items.find((element) => {
-      newID === element.id;
-    });
-    console.log("Result " + result);
+    //.some method returns true or false
+    //.find returns the value or undefined
+    while (
+      items.some((obj) => {
+        return obj.id === newID;
+      })
+    ) {
+      //trim trims all the whitespaces
+      //.slice extracts those characters from the string, it is exclusive of the last num
+      //Math.random, generates a decimal value, need to parse it into an integer
 
-    if (result !== true) {
-      currentArray.push({
-        id: newID,
-        name: name,
-        qty: qty,
-        category: category,
-      });
+      newID = `${name.trim().slice(0, 3).toLowerCase()}${Number.parseInt(
+        Math.random() * 10000
+      )}`;
     }
+
+    currentArray.push({
+      id: newID,
+      name: name.trim(),
+      qty: qty,
+      category: category.trim(),
+    });
   }
   return currentArray;
 };
@@ -96,3 +106,12 @@ let addItem = (items, name, qty, category = "other") => {
 const original = items;
 
 const newItems = addItem(items, "Milk", 2, "dairy");
+console.log(newItems);
+console.log("Original length:", items.length); // 5
+console.log("New length:", newItems.length); // 6
+console.log("Original unchanged:", items.length === 5); // true
+console.log("New item exists:", findByName(newItems, "milk") !== null); // true
+
+console.log(addItem(items, "   ", 2, "dairy").length); // 5
+console.log(addItem(items, "Bread", 0, "carbs").length); // 5
+console.log(addItem(items, "Bread", 2.5, "carbs").length); // 5
