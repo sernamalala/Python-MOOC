@@ -1,0 +1,23 @@
+For every project, you’ll do these 5 steps before writing anything:
+
+Tiny Spec (10 lines max)
+
+What does the program do?
+
+What inputs? What outputs?
+
+What rules?
+
+When is it “done”?
+
+State (the data that changes)
+Ask: “What do I need to remember while the program runs?”
+
+Actions (what can happen)
+List actions like: “player chooses move”, “check winner”, “update score”, “save data”.
+
+Rules (pure logic)
+This is where most confidence comes from: rules should be testable without UI.
+
+UI last
+CLI or GUI is just how you press the buttons. Your logic stays the same.
