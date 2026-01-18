@@ -25,3 +25,7 @@ let b = 5;
 console.log(a + b);
 console.log(Number(a) + b);
 console.log(a + String(b));
+
+console.log(Number("10.5"));
+console.log(Number("10abc"));
+console.log(Number(" 7 "));
