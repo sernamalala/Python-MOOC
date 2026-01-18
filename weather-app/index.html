@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Delius&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
     <title>Weather App🌦️</title>
   </head>
@@ -10,7 +16,7 @@
     <!-- In the body tag, lets create a card -->
     <div class="card">
       <!-- inside the card, lets add the search input -->
-      <h1>Weather App 🌦️</h1>
+      <!-- We have a input field and a button which has an image as its background -->
       <div class="search">
         <input
           type="text"
@@ -20,6 +26,30 @@
           spellcheck="false"
         />
         <button><img src="images/search.png" alt="Search image" /></button>
+      </div>
+
+      <div class="weather">
+        <img src="images/rain.png" alt="" class="weather-icon" />
+        <h1 class="temp">22°C</h1>
+        <h2 class="city">Cape Town</h2>
+        <div class="details">
+          <!-- details are didivided into two columns -->
+          <div class="col">
+            <img src="images/humidity.png" alt="" />
+            <div>
+              <p class="humidity">50%</p>
+              <p>Humidity</p>
+            </div>
+          </div>
+
+          <div class="col">
+            <img src="images/wind.png" alt="" />
+            <div>
+              <p class="wind">15 km/h</p>
+              <p>Wind Speed</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
