@@ -16,3 +16,12 @@ console.log(money, typeof money);
 console.log(opts, typeof opts);
 console.log(obj, typeof obj);
 console.log(array, typeof array);
+
+//~~~
+
+let a = "10";
+let b = 5;
+
+console.log(a + b);
+console.log(Number(a) + b);
+console.log(a + String(b));
