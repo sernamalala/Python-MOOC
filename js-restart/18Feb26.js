@@ -58,3 +58,46 @@ for (let i = 0; i < prices.length; i++) {
 }
 
 console.log(`The tax added prices are ${taxAddedPrices}`);
+
+//Bonus Challenge
+
+// Rewrite EX3 using `.filter()`
+//filter returns an element
+
+let score2 = [45, 70, 82, 30, 90, 60];
+
+let passed2 = [];
+
+score2.filter((element) => {
+  if (element >= 60) {
+    passed2.push(element);
+  }
+});
+
+console.log(`This is more than or equal to 60: ${passed2}`);
+// Rewrite EX4 using `.map()`
+//map transforms elements
+//Create new array where each price has 15% tax added.
+
+let prices2 = [100, 200, 300];
+
+let taxAddedPrices2 = [];
+
+prices2.map((element) => {
+  taxAddedPrices2.push(element * 1.15);
+});
+console.log(`This is new tax prices : ${taxAddedPrices2}`);
+
+//THE ABOVE WAS WRONG WAYS OF USING MAP AND FILTER, MAP AND ILTER RETURN ARRAYS!
+
+let fix1 = score2.filter((element) => {
+  return element >= 60;
+});
+
+console.log(`fix 1 ${fix1}`);
+
+let fix2 = prices2.map((element) => {
+  return element * 1.15;
+});
+
+console.log(`fix 2 ${fix2}`);
