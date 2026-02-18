@@ -101,3 +101,22 @@ let fix2 = prices2.map((element) => {
 });
 
 console.log(`fix 2 ${fix2}`);
+
+//Mini challenge
+
+let products = [
+  { name: "Laptop", price: 5000 },
+  { name: "Phone", price: 2000 },
+  { name: "TV", price: 3000 },
+  { name: "Mouse", price: 500 },
+];
+
+let pricyName = products
+  .filter((element) => {
+    return element.price > 2500;
+  })
+  .map((element1) => {
+    return element1.name;
+  });
+
+console.log("Pricy name is " + pricyName);
