@@ -73,3 +73,52 @@ let myProducts = products
   }, 0);
 
 console.log("The total products price: " + myProducts);
+
+//Exercise 1 Array methods
+
+/*1. Get students who passed (score >= 50)
+2. Return only their names
+3. Convert names to uppercase
+*/
+
+let students = [
+  { name: "Liam", score: 80 },
+  { name: "Noah", score: 45 },
+  { name: "Olivia", score: 90 },
+  { name: "Emma", score: 60 },
+  { name: "Ava", score: 30 },
+];
+
+let studentPassed = students
+  .filter((student) => {
+    return student.score >= 50;
+  })
+  .map((student) => {
+    return student.name.toUpperCase();
+  });
+
+console.log(studentPassed);
+
+//Exercise 2 Array methods
+/*
+Use reduce to count how many items per category.
+*/
+
+let orders = [
+  { item: "Laptop", category: "Electronics" },
+  { item: "Shirt", category: "Clothing" },
+  { item: "Phone", category: "Electronics" },
+  { item: "Jeans", category: "Clothing" },
+  { item: "TV", category: "Electronics" },
+];
+
+let itemCategory = orders.reduce((accumulator, current) => {
+  if (accumulator[current]) {
+    accumulator[current]++;
+  } else {
+    accumulator[current] = 1;
+  }
+  return accumulator;
+}, {});
+
+console.log(itemCategory);
