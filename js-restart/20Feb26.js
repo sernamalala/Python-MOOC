@@ -59,3 +59,81 @@ let listItems = fruits.forEach((item) => {
 });
 
 console.log(listItems);
+
+/*💥 Mini Challenge 
+Add another button:
+“Add Fruit”
+When clicked:
+
+Push a new fruit into the array
+
+Re-render the list
+*/
+const rnadomFruits = [
+  "Apple",
+  "Banana",
+  "Orange",
+  "Mango",
+  "Grapes",
+  "Watermelon",
+  "Strawberry",
+  "Blueberry",
+  "Kiwi",
+  "Papaya",
+  "Pineapple",
+  "Pomegranate",
+  "Peach",
+  "Pear",
+  "Cherry",
+  "Raspberry",
+  "Blackberry",
+  "Lemon",
+  "Lime",
+  "Grapefruit",
+  "Mandarin",
+  "Tangerine",
+  "Cantaloupe",
+  "Apricot",
+  "Plum",
+  "Nectarine",
+  "Avocado",
+  "Coconut",
+  "Dragon Fruit",
+  "Lychee",
+  "Durian",
+  "Guava",
+  "Passion Fruit",
+  "Star Fruit",
+  "Persimmon",
+  "Quince",
+  "Gooseberry",
+  "Kumquat",
+  "Rambutan",
+  "Sapodilla",
+  "Loquat",
+  "Jujube",
+  "Breadfruit",
+  "Jackfruit",
+  "Fig",
+  "Date",
+  "Mangosteen",
+  "Currant",
+  "Boysenberry",
+  "Elderberry",
+];
+
+let fruitButton = document.getElementById("fruit");
+
+//--let randomNum = Math.floor(Math.random() * (rnadomFruits.length - 1) + 1);
+//random num needs to be insode the click function so it doesnt only add the same fruit
+let clickFruit = () => {
+  let randomNum = Math.floor(Math.random() * rnadomFruits.length);
+  let val = rnadomFruits[randomNum];
+  let listItem = document.createElement("li");
+  fruits.push(val);
+  listItem.innerText = val;
+  listContainer.appendChild(listItem);
+  console.log(fruits);
+};
+
+fruitButton.addEventListener("click", clickFruit);
