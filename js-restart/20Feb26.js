@@ -19,3 +19,20 @@ let itemCat = orders.reduce((accumulator, current) => {
 console.log(itemCat);
 
 //DOM PRACTICE
+//EXERCISE 1 — Selecting + Changing Text
+let h1Heading = document.getElementById("title");
+h1Heading.innerHTML = "Serna is back";
+
+//EXERCISE 2 — Event Listener & EXERCISE 3 — Style Manipulation
+let btn = document.getElementById("changeBtn");
+//declare function to put in click eventlistener
+let clickFunction = () => {
+  h1Heading.innerHTML = "Button was clicked";
+  h1Heading.style.color = "skyblue";
+  h1Heading.style.fontSize = "100px";
+  document.querySelector("body").style.backgroundColor = "red";
+};
+
+btn.addEventListener("click", clickFunction);
+
+//
