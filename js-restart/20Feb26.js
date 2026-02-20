@@ -35,4 +35,27 @@ let clickFunction = () => {
 
 btn.addEventListener("click", clickFunction);
 
-//
+//EXERCISE 4 — Rendering an Array to the Page
+
+/*
+1️⃣ Select the ul
+2️⃣ Loop through fruits
+3️⃣ For each fruit:
+
+Create a <li>
+
+Set its text
+
+Append it to the ul
+*/
+let fruits = ["Apple", "Banana", "Orange"];
+
+let listContainer = document.getElementById("list");
+
+let listItems = fruits.forEach((item) => {
+  let listItem = document.createElement("li");
+  listItem.innerText = item;
+  listContainer.appendChild(listItem);
+});
+
+console.log(listItems);
