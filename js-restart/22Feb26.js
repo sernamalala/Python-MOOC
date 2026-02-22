@@ -33,4 +33,22 @@ let renderFruits = () => {
   }
 };
 
-console.log(renderFruits());
+//EX2 Add item from input
+
+let addBtn = document.getElementById("addBtn");
+let input = document.getElementById("fruitInput");
+
+renderFruits();
+
+let addFruit = () => {
+  let currentInput = input.value;
+
+  if (currentInput.trim() !== "") {
+    fruits.push(currentInput);
+    console.log(currentInput);
+    renderFruits();
+    input.value = "";
+  }
+};
+
+addBtn.addEventListener("click", addFruit);
