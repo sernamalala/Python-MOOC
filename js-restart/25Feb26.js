@@ -52,7 +52,7 @@ let addFruit = () => {
 
   if (currentInput.trim() !== "") {
     fruits.push(currentInput);
-    fruitInput.innerText = " ";
+    fruitInput.value = " "; //clear input field
   }
 
   renderFruits();
