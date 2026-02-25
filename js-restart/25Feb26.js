@@ -19,12 +19,13 @@ let emptyMsg = document.getElementById("empty");
 function renderFruits() {
   listContainer.innerHTML = "";
 
+  if (fruits.length === 0) {
+    emptyMsg.innerText = "There are no fruits.";
+    return;
+  }
   ///works on each li
-  fruits.forEach((fruit, index) => {
-    if (fruits.length === 0) {
-      emptyMsg.innerText = "There are no fruits.";
-      return;
-    } else {
+  else {
+    fruits.forEach((fruit, index) => {
       emptyMsg.innerText = "";
       let listItem = document.createElement("li");
       listItem.innerText = fruit;
@@ -38,8 +39,8 @@ function renderFruits() {
       });
 
       listContainer.appendChild(listItem);
-    }
-  });
+    });
+  }
 }
 
 renderFruits();
@@ -64,7 +65,7 @@ let addFruit = () => {
 
   if (currentInput.trim() !== "") {
     fruits.push(currentInput);
-    fruitInput.value = " "; //clear input field
+    fruitInput.value = ""; //clear input field
   }
 
   renderFruits();
@@ -149,11 +150,11 @@ const randomFruits = [
 let randomBtn = document.getElementById("randomBtn");
 
 let randomFruit = () => {
-  let randomNum = Math.floor(Math.random() * (randomFruits.length - 1) + 1); //random num
+  let randomNum = Math.floor(Math.random() * randomFruits.length); //random num
   let oneRandomFruit = randomFruits[randomNum];
   fruits.push(oneRandomFruit); //push random fruit to fruits array
   renderFruits();
-  fruitInput.value = " "; //clear input field
+  fruitInput.value = ""; //clear input field
 };
 
 randomBtn.addEventListener("click", randomFruit);
