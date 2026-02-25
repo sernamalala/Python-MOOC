@@ -17,14 +17,26 @@ let listContainer = document.getElementById("list");
 let emptyMsg = document.getElementById("empty");
 
 function renderFruits() {
-  listContainer.innerText = "";
+  listContainer.innerHTML = "";
 
-  fruits.forEach((fruit) => {
+  ///works on each li
+  fruits.forEach((fruit, index) => {
     if (fruits.length === 0) {
       emptyMsg.innerText = "There are no fruits.";
+      return;
     } else {
+      emptyMsg.innerText = "";
       let listItem = document.createElement("li");
       listItem.innerText = fruit;
+
+      //EX 3
+      //create eventlistener
+
+      listItem.addEventListener("click", () => {
+        fruits.splice(index, 1);
+        renderFruits();
+      });
+
       listContainer.appendChild(listItem);
     }
   });
@@ -59,3 +71,15 @@ let addFruit = () => {
 };
 
 addBtn.addEventListener("click", addFruit);
+
+/*
+EXERCISE 3: Remove an item by clicking it
+Requirements:
+
+Each <li> should remove itself when clicked
+But do it properly: remove from the array, then re-render
+
+Hint:
+Use index in your loop
+Use fruits.splice(index, 1)
+So your renderFruits() will need to know each item’s index. */
