@@ -83,3 +83,77 @@ Hint:
 Use index in your loop
 Use fruits.splice(index, 1)
 So your renderFruits() will need to know each item’s index. */
+
+/*EXERCISE 4: Random button
+Requirements:
+
+When randomBtn is clicked: pick a random fruit and add it
+
+Then call renderFruits()
+
+You can reuse your randomFruits list.*/
+
+const randomFruits = [
+  "Apple",
+  "Banana",
+  "Orange",
+  "Mango",
+  "Grapes",
+  "Watermelon",
+  "Strawberry",
+  "Blueberry",
+  "Kiwi",
+  "Papaya",
+  "Pineapple",
+  "Pomegranate",
+  "Peach",
+  "Pear",
+  "Cherry",
+  "Raspberry",
+  "Blackberry",
+  "Lemon",
+  "Lime",
+  "Grapefruit",
+  "Mandarin",
+  "Tangerine",
+  "Cantaloupe",
+  "Apricot",
+  "Plum",
+  "Nectarine",
+  "Avocado",
+  "Coconut",
+  "Dragon Fruit",
+  "Lychee",
+  "Durian",
+  "Guava",
+  "Passion Fruit",
+  "Star Fruit",
+  "Persimmon",
+  "Quince",
+  "Gooseberry",
+  "Kumquat",
+  "Rambutan",
+  "Sapodilla",
+  "Loquat",
+  "Jujube",
+  "Breadfruit",
+  "Jackfruit",
+  "Fig",
+  "Date",
+  "Mangosteen",
+  "Currant",
+  "Boysenberry",
+  "Elderberry",
+];
+
+let randomBtn = document.getElementById("randomBtn");
+
+let randomFruit = () => {
+  let randomNum = Math.floor(Math.random() * (randomFruits.length - 1) + 1); //random num
+  let oneRandomFruit = randomFruits[randomNum];
+  fruits.push(oneRandomFruit); //push random fruit to fruits array
+  renderFruits();
+  fruitInput.value = " "; //clear input field
+};
+
+randomBtn.addEventListener("click", randomFruit);
