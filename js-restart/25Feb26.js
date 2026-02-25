@@ -31,3 +31,31 @@ function renderFruits() {
 }
 
 renderFruits();
+
+/*EXERCISE 2: Add item from input
+Requirements:
+Button addBtn adds input value to array
+
+Input should trim spaces
+
+If input is empty: do nothing
+
+After adding: clear input
+
+Call renderFruits() */
+
+let fruitInput = document.getElementById("fruitInput");
+let addBtn = document.getElementById("addBtn");
+
+let addFruit = () => {
+  let currentInput = fruitInput.value;
+
+  if (currentInput.trim() !== "") {
+    fruits.push(currentInput);
+    fruitInput.innerText = " ";
+  }
+
+  renderFruits();
+};
+
+addBtn.addEventListener("click", addFruit);
