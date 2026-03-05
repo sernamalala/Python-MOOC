@@ -79,3 +79,17 @@ GROUP BY
     T1."PymntGroup"
 ORDER BY
     TotalCreditLimit DESC
+    -- Exercise 14 --Show how many customers exist for each payment term AND the total credit limit for those customers.
+SELECT
+    T1."PymntGroup" AS 'Payment Term Name',
+    COUNT(T0."CardCode") AS 'CustomerCount',
+    SUM(T0."CreditLine") AS 'TotalCreditLimit'
+FROM
+    OCRD T0
+    INNER JOIN OCTG T1 ON T0."GroupNum" = T1."GroupNum"
+WHERE
+    T0."CardType" = 'C'
+GROUP BY
+    T1."PymntGroup"
+ORDER BY
+    CustomerCount DESC
