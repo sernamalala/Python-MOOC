@@ -52,6 +52,7 @@ GROUP BY
     T1."PymntGroup"
 ORDER BY
     VendorCount DESC
+    --Exercise 12 -- Only show payment terms where CustomerCount > 2
 SELECT
     T1."PymntGroup" AS 'Payment Term Name',
     COUNT(T0."CardName") AS 'CustomerCount'
@@ -64,3 +65,17 @@ GROUP BY
     T1."PymntGroup"
 HAVING
     COUNT(T0."CardName") > 2
+    --Exercise 13
+SELECT
+    T1."PymntGroup" AS 'Payment Term Name',
+    SUM(T0."CreditLine") AS 'TotalCreditLimit',
+    AVG(T0."CreditLine") AS 'AverageCreditLimit'
+FROM
+    OCRD T0
+    INNER JOIN OCTG T1 ON T0."GroupNum" = T1."GroupNum"
+WHERE
+    T0."CardType" = 'C'
+GROUP BY
+    T1."PymntGroup"
+ORDER BY
+    TotalCreditLimit DESC
